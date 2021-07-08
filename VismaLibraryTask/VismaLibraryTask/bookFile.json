@@ -1,0 +1,11 @@
+﻿{
+  "Book": 
+    {
+      "name": "Bible",
+      "author": "author1",
+      "category": "prayer",
+      "language": "english",
+      "publicationDate": "0001, 3, 1, 7, 0, 0",
+      "ISBN": "0-000-000-000-001"
+    }
+}

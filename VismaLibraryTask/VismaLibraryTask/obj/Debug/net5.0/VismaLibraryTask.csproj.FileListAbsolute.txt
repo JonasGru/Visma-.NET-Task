@@ -1,0 +1,16 @@
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\bin\Debug\net5.0\VismaLibraryTask.exe
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\bin\Debug\net5.0\VismaLibraryTask.deps.json
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\bin\Debug\net5.0\VismaLibraryTask.runtimeconfig.json
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\bin\Debug\net5.0\VismaLibraryTask.runtimeconfig.dev.json
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\bin\Debug\net5.0\VismaLibraryTask.dll
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\bin\Debug\net5.0\ref\VismaLibraryTask.dll
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\bin\Debug\net5.0\VismaLibraryTask.pdb
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\obj\Debug\net5.0\VismaLibraryTask.csproj.AssemblyReference.cache
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\obj\Debug\net5.0\VismaLibraryTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\obj\Debug\net5.0\VismaLibraryTask.AssemblyInfoInputs.cache
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\obj\Debug\net5.0\VismaLibraryTask.AssemblyInfo.cs
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\obj\Debug\net5.0\VismaLibraryTask.csproj.CoreCompileInputs.cache
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\obj\Debug\net5.0\VismaLibraryTask.dll
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\obj\Debug\net5.0\ref\VismaLibraryTask.dll
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\obj\Debug\net5.0\VismaLibraryTask.pdb
+C:\Users\armed\OneDrive\Desktop\unity git\Visma-.NET-Task\VismaLibraryTask\VismaLibraryTask\obj\Debug\net5.0\VismaLibraryTask.genruntimeconfig.cache
