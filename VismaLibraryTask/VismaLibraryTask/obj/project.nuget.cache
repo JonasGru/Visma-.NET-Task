@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "DikoS8jX2ynjDz5oP/9exuXuLPRG9AdTQEvwVMeDF27WgrJG9y7gndnkppPDvvAOLZCOf2KZE9fkxHtkXTwazw==",
+  "dgSpecHash": "xmbBq3T6NVKEnAxXL0/YGKK9GdqCovIFpjMpQWlfBNFTXHYrqxMWPMLzXsyMU5ZIDnbBZIEentLGkjbIMK48pA==",
   "success": true,
   "projectFilePath": "C:\\Users\\armed\\OneDrive\\Desktop\\unity git\\Visma-.NET-Task\\VismaLibraryTask\\VismaLibraryTask\\VismaLibraryTask.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\armed\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

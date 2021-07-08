@@ -7,17 +7,24 @@ using System.Threading.Tasks;
 
 namespace VismaLibraryTask
 {
-    class Book
+    public class Book
     {
-        public string name;
-        public string author;
-        public string category;
-        public string language;
-        public DateTime publicationDate;
-        public string ISBN;
-        
+        public string Name { get; set; }
+        public string Author { get; set; }
+        public string Category { get; set; }
+        public string Language { get; set; }
+        public DateTime PublicationDate { get; set; }
+        public string ISBN { get; set; }
 
 
-
+        public Book(string bookName, string auth, string cat, string lang, DateTime bookTime, string isnb)
+        {
+            Name = bookName;
+            Author = auth;
+            Category = cat;
+            Language = lang;
+            PublicationDate = bookTime;
+            ISBN = isnb;
+        }
     }
 }
