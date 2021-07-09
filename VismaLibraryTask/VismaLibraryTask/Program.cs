@@ -43,7 +43,7 @@ namespace VismaLibraryTask
 
         public static void MainMenu()
         {
-            Console.WriteLine($"{"1 - Library contents", -15} | {"2 - Insert Book",-15} | {"3 - TakeBook",-15} | {"4 - ReturnBook",-15} | {"9 - Save Library",-15} | {"0 - Exit Library",-15} |");
+            Console.WriteLine($"{"1 - Library contents", -15} | {"2 - Insert Book",-15} | {"3 - TakeBook",-15} | {"4 - ReturnBook",-15} | {"5 - FilterBooks",-15} | {"9 - Save Library",-15} | {"0 - Exit Library",-15} |");
             string input = Console.ReadLine();
             switch (input)
             {
@@ -58,6 +58,9 @@ namespace VismaLibraryTask
                     break;
                 case "4":
                     ReturnBook();
+                    break;
+                case "5":
+                    FilterBooks();
                     break;
                 case "9":
                     SaveLibrary();
@@ -88,6 +91,18 @@ namespace VismaLibraryTask
             {
                 Console.WriteLine($"{nr++,4} | {b.Name, -15} | {b.Author, -15} | {b.Category, -15} | {b.Language,-10} | {b.PublicationDate.Year,-10}" +
                     $" | {b.ISBN,-17} | {b.Taken, -6} | {b.TakenBy,-10} | {b.TakenUntil,-17}");
+            }
+        }
+
+        public static void PrintLibrary(List<Book> listToPrint)
+        {
+            Console.WriteLine($"{"NR",4} | {"Name",-15} | {"Author",-15} | {"Category",-15} | {"Language",-10} | {"P_Date",-10} |" +
+                $" {"ISBN",-17} | {"Taken?",-6} | {"TakenBy",-10} | {"TakenUntil",-17}");
+            int nr = 0; //faster than booksInLibrary.IndexOf(b)?
+            foreach (Book b in listToPrint)
+            {
+                Console.WriteLine($"{nr++,4} | {b.Name,-15} | {b.Author,-15} | {b.Category,-15} | {b.Language,-10} | {b.PublicationDate.Year,-10}" +
+                    $" | {b.ISBN,-17} | {b.Taken,-6} | {b.TakenBy,-10} | {b.TakenUntil,-17}");
             }
         }
 
@@ -217,8 +232,11 @@ namespace VismaLibraryTask
                 throw;
             }
 
-            
+            ReturnBookToLibrary(nr);
+        }
 
+        public static void ReturnBookToLibrary(int nr)
+        {
             try
             {
                 if (booksInLibrary[nr].Taken == false)
@@ -237,7 +255,7 @@ namespace VismaLibraryTask
                 booksInLibrary[nr].TakenBy = null;
                 booksInLibrary[nr].TakenUntil = null;
 
-                Console.WriteLine(onTime? "book was returned" : "book was returned, but it was late! try harder next time!");
+                Console.WriteLine(onTime ? "book was returned" : "book was returned, but it was late! try harder next time!");
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -251,6 +269,51 @@ namespace VismaLibraryTask
                 throw;
             }
         }
+
+        public static void FilterBooks()
+        {
+            Console.WriteLine($"{"1 - by author",-15} | {"2 - by category",-15} | {"3 - by language",-15} | {"4 - by ISBN",-15} | {"5 - by name",-15} " +
+                $"| {"6 -by availability",-15} | {"0 - Exit Filtering",-15} |");
+            string input = Console.ReadLine();
+            Console.WriteLine("type in filter criteria:");
+            string filterBy = Console.ReadLine();
+
+
+            FilterBooksInLibrary(input, filterBy);
+        }
+
+        public static void FilterBooksInLibrary(string input, string filterBy)
+        {
+            List<Book> results;
+            //List<Book> results = booksInLibrary.FindAll(delegate (Book b) { return b.TakenBy == personBorrowing; });
+            switch (input)
+            {
+                case "1":
+                    results = booksInLibrary.FindAll(delegate (Book b) { return b.Author == filterBy; });
+                    break;
+                case "2":
+                    results = booksInLibrary.FindAll(delegate (Book b) { return b.Category == filterBy; });
+                    break;
+                case "3":
+                    results = booksInLibrary.FindAll(delegate (Book b) { return b.Language == filterBy; });
+                    break;
+                case "4":
+                    results = booksInLibrary.FindAll(delegate (Book b) { return b.ISBN == filterBy; });
+                    break;
+                case "5":
+                    results = booksInLibrary.FindAll(delegate (Book b) { return b.Name == filterBy; });
+                    break;
+                case "6":
+                    results = booksInLibrary.FindAll(delegate (Book b) { return b.Taken == (filterBy == "true" ? true : false); });
+                    break;
+                case "0":
+                    return;
+                default:
+                    Console.WriteLine("input not recognized");
+                    return;
+            }
+        }
+
         public static void DeleteBook()
         {
 
