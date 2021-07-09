@@ -43,7 +43,7 @@ namespace VismaLibraryTask
 
         public static void MainMenu()
         {
-            Console.WriteLine($"{"1 - Library contents", -15} | {"2 - Insert Book",-15} | {"3 - TakeBook",-15} | {"9 - Save Library",-15} | {"0 - Exit Library",-15} |");
+            Console.WriteLine($"{"1 - Library contents", -15} | {"2 - Insert Book",-15} | {"3 - TakeBook",-15} | {"4 - ReturnBook",-15} | {"9 - Save Library",-15} | {"0 - Exit Library",-15} |");
             string input = Console.ReadLine();
             switch (input)
             {
@@ -55,6 +55,9 @@ namespace VismaLibraryTask
                     break;
                 case "3":
                     TakeBook();
+                    break;
+                case "4":
+                    ReturnBook();
                     break;
                 case "9":
                     SaveLibrary();
@@ -78,11 +81,13 @@ namespace VismaLibraryTask
 
         public static void PrintLibrary()
         {
-            Console.WriteLine($"{"NR", 4} | {"Name", -15} | {"Author", -15} | {"Category",-15} | {"Language",-10} | {"P_Date",-10} | {"ISBN",-17} ");
+            Console.WriteLine($"{"NR", 4} | {"Name", -15} | {"Author", -15} | {"Category",-15} | {"Language",-10} | {"P_Date",-10} |" +
+                $" {"ISBN",-17} | {"Taken?",-6} | {"TakenBy",-10} | {"TakenUntil",-17}");
             int nr = 0; //faster than booksInLibrary.IndexOf(b)?
             foreach (Book b in booksInLibrary)
             {
-                Console.WriteLine($"{nr++,4} | {b.Name, -15} | {b.Author, -15} | {b.Category, -15} | {b.Language,-10} | {b.PublicationDate.Year,-10} | {b.ISBN,-17}");
+                Console.WriteLine($"{nr++,4} | {b.Name, -15} | {b.Author, -15} | {b.Category, -15} | {b.Language,-10} | {b.PublicationDate.Year,-10}" +
+                    $" | {b.ISBN,-17} | {b.Taken, -6} | {b.TakenBy,-10} | {b.TakenUntil,-17}");
             }
         }
 
@@ -130,6 +135,7 @@ namespace VismaLibraryTask
 
         public static void TakeBook()
         {
+            PrintLibrary();
             Console.WriteLine("select a book to take (write it's NR to console):");
             int nr;
             try
@@ -163,10 +169,10 @@ namespace VismaLibraryTask
         public static void TakeBookFromLibrary(int nr, string personBorrowing, DateTime date)
         {
             List<Book> results = booksInLibrary.FindAll(delegate (Book b) { return b.TakenBy == personBorrowing; });
-            Console.WriteLine("person borrowed: " + results.Count);
+            //Console.WriteLine("person borrowed: " + results.Count);
             if(results.Count > 2)
             {
-                Console.WriteLine($"person already borrowed {results.Count} books, we only allow borrowing 3 books!");
+                Console.WriteLine($"person already borrowed {results.Count} books, we only allow borrowing up to 3 books!");
                 return;
             }
             if (date.CompareTo(DateTime.Parse("02 01")) < 1)
@@ -177,9 +183,10 @@ namespace VismaLibraryTask
                     booksInLibrary[nr].TakenBy = personBorrowing;
                     booksInLibrary[nr].TakenUntil = DateTime.Now.AddMonths(date.Month).AddDays(date.Day);
                 }
-                catch (IndexOutOfRangeException)
+                catch (ArgumentOutOfRangeException)
                 {
                     Console.WriteLine("book not found");
+                    return;
                     throw;
                 }
                 catch (Exception)
@@ -197,7 +204,52 @@ namespace VismaLibraryTask
 
         public static void ReturnBook()
         {
+            PrintLibrary();
+            Console.WriteLine("select a book to return (write it's NR to console):");
+            int nr;
+            try
+            {
+                nr = int.Parse(Console.ReadLine());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("please write an integer (number)");
+                throw;
+            }
 
+            
+
+            try
+            {
+                if (booksInLibrary[nr].Taken == false)
+                {
+                    Console.WriteLine("book wasn't taken by anyone");
+                    return;
+                }
+
+                bool onTime = false;
+                if (booksInLibrary[nr].TakenUntil > DateTime.Now)
+                {
+                    onTime = true;
+                }
+
+                booksInLibrary[nr].Taken = false;
+                booksInLibrary[nr].TakenBy = null;
+                booksInLibrary[nr].TakenUntil = null;
+
+                Console.WriteLine(onTime? "book was returned" : "book was returned, but it was late! try harder next time!");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("book not found");
+                return;
+                throw;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         public static void DeleteBook()
         {
