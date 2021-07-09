@@ -1,18 +1,36 @@
-﻿[
-    {
-      "Name": "Bible",
-      "Author": "author1",
-      "Category": "prayer",
-      "Language": "english",
-      "PublicationDate": "2012-01-01T00:00:00",
-      "ISBN": "0-000-000-000-001"
-    },
-    {
-      "Name": "Test",
-      "Author": "author",
-      "Category": "testing",
-      "Language": "English",
-      "PublicationDate": "2000-01-01T00:00:00",
-      "ISBN": "0-000-000-000-002"
-    }
-  ]
+[
+  {
+    "Name": "Bible",
+    "Author": "author1",
+    "Category": "prayer",
+    "Language": "english",
+    "PublicationDate": "2012-01-01T00:00:00",
+    "ISBN": "0-000-000-000-001",
+    "Taken": false,
+    "TakenBy": null,
+    "TakenUntil": null
+  },
+  {
+    "Name": "Test",
+    "Author": "author",
+    "Category": "testing",
+    "Language": "English",
+    "PublicationDate": "2000-01-01T00:00:00",
+    "ISBN": "0-000-000-000-002",
+    "Taken": false,
+    "TakenBy": null,
+    "TakenUntil": null
+  },
+  {
+    "Name": "a",
+    "Author": "a",
+    "Category": "a",
+    "Language": "a",
+    "PublicationDate": "2020-02-02T00:00:00",
+    "ISBN": "1234567891234",
+    "Taken": false,
+    "TakenBy": null,
+    "TakenUntil": null
+  }
+
+]

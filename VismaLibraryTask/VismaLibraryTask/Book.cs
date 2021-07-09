@@ -15,6 +15,9 @@ namespace VismaLibraryTask
         public string Language { get; set; }
         public DateTime PublicationDate { get; set; }
         public string ISBN { get; set; }
+        public bool? Taken { get; set; }
+        public string? TakenBy { get; set; }
+        public DateTime? TakenUntil { get; set; }
 
 
         public Book(string bookName, string auth, string cat, string lang, DateTime bookTime, string isnb)
@@ -25,6 +28,7 @@ namespace VismaLibraryTask
             Language = lang;
             PublicationDate = bookTime;
             ISBN = isnb;
+            Taken = false;
         }
     }
 }
