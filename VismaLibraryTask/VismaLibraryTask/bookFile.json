@@ -1,1 +1,58 @@
-[{"Name":"Bible","Author":"author1","Category":"prayer","Language":"english","PublicationDate":"2012-01-01T00:00:00","ISBN":"0-000-000-000-001","Taken":false,"TakenBy":null,"TakenUntil":null},{"Name":"Test","Author":"author","Category":"testing","Language":"English","PublicationDate":"2000-01-01T00:00:00","ISBN":"0-000-000-000-002","Taken":true,"TakenBy":"Jonas","TakenUntil":"2021-08-10T13:59:47.3070187+03:00"},{"Name":"a","Author":"a","Category":"a","Language":"a","PublicationDate":"2020-02-02T00:00:00","ISBN":"1234567891234","Taken":true,"TakenBy":"Jonas","TakenUntil":"2021-08-21T14:00:05.7009961+03:00"}]
+[
+  
+  {
+    "Name": "Bible",
+    "Author": "author1",
+    "Category": "prayer",
+    "Language": "english",
+    "PublicationDate": "2012-01-01T00:00:00",
+    "ISBN": "0-000-000-000-001",
+    "Taken": false,
+    "TakenBy": null,
+    "TakenUntil": null
+  },
+  {
+    "Name": "Test",
+    "Author": "author",
+    "Category": "testing",
+    "Language": "English",
+    "PublicationDate": "2000-01-01T00:00:00",
+    "ISBN": "0-000-000-000-002",
+    "Taken": true,
+    "TakenBy": "Jonas",
+    "TakenUntil": "2021-08-10T13:59:47.3070187+03:00"
+  },
+  {
+    "Name": "a",
+    "Author": "a",
+    "Category": "a",
+    "Language": "a",
+    "PublicationDate": "2020-02-02T00:00:00",
+    "ISBN": "1234567891234",
+    "Taken": true,
+    "TakenBy": "Jonas",
+    "TakenUntil": "2021-08-21T14:00:05.7009961+03:00"
+  },
+  {
+    "Name": "c# for dummies",
+    "Author": "Stephan R.",
+    "Category": "programming",
+    "Language": "english",
+    "PublicationDate": "2000-07-15T00:00:00",
+    "ISBN": "978-0764508141",
+    "Taken": false,
+    "TakenBy": null,
+    "TakenUntil": null
+  },
+  {
+    "Name": "asd",
+    "Author": "asd",
+    "Category": "asd",
+    "Language": "asd",
+    "PublicationDate": "2000-01-02T00:00:00",
+    "ISBN": "123456",
+    "Taken": true,
+    "TakenBy": "asdf",
+    "TakenUntil": "2021-08-11T13:20:09.9617864+03:00"
+  }
+]
